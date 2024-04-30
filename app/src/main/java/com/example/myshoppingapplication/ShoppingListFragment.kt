@@ -9,6 +9,7 @@ import android.widget.Adapter
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.SearchView
 import android.widget.SimpleAdapter
 
 // TODO: Rename parameter arguments, choose names that match
@@ -26,6 +27,11 @@ class ShoppingListFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
 
+    private lateinit var listView: ListView
+    private lateinit var searchView: SearchView
+    private lateinit var adapter: ArrayAdapter<String>
+    lateinit var shoppingList:MutableList<String>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
@@ -34,19 +40,33 @@ class ShoppingListFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
 
         val view = inflater.inflate(R.layout.fragment_shopping_list, container, false)
+        listView = view.findViewById<ListView>(R.id.lvShoppingList)
 
-        val listView = view.findViewById<ListView>(R.id.list)
-        val courseList = mutableListOf("C-Programming", "Data Structure", "Database", "Python", "Java", "Operating System","Compiler Design", "Android Development");
+        //the list that will be populated in the UI
+        shoppingList= mutableListOf(
+            "Apples", "Bananas", "Oranges", "Milk", "Bread", "Eggs","Cheese", "Yogurt",
+        "Beef","Onions","Peanut Butter","Towels","Laundry Detergent","Trash Bags");
 
-//        var arrayAdapter = SimpleAdapter(context, R.layout.fragment_shopping_list, courseList);
+        //create array adapter which will tie the list to the listView in the UI
+        val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, shoppingList)
+        listView.adapter = adapter //link the list to the adapter
 
 
+//        // Set listener for SearchView
+//        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+//            override fun onQueryTextSubmit(query: String?): Boolean {
+//                return false
+//            }
+//
+//            override fun onQueryTextChange(newText: String?): Boolean {
+//                adapter.filter.filter(newText)
+//                return false
+//            }
+//        })
 
         // Inflate the layout for this fragment
         return view

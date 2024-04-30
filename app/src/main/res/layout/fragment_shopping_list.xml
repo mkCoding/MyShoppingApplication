@@ -6,14 +6,31 @@
     tools:context=".ShoppingListFragment">
 
     <!-- TODO: Update blank fragment layout -->
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="34sp"-->
+<!--        android:text="Shopping List Fragment"/>-->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:gravity="center"
-        android:textSize="34sp"
-        android:text="Shopping List Fragment"/>
+        android:textSize="20sp"
+        android:text="Review your shopping list below"/>
 
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="112dp"
+        android:gravity="center"
+        android:textSize="40sp"
+        android:textColor="@color/black"
+        android:textStyle="italic|bold"
+        android:text="Your Shopping List" />
 
+    <!--Added lines-->
     <LinearLayout
         android:id="@+id/layout"
         android:layout_width="match_parent"
@@ -22,7 +39,7 @@
         android:orientation="vertical" >
 
         <ListView
-            android:id="@+id/list"
+            android:id="@+id/lvShoppingList"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" >
         </ListView>
@@ -34,15 +51,7 @@
         </TextView>
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:gravity="center"
-        android:textSize="40sp"
-        android:textColor="@color/black"
-        android:textStyle="italic|bold"
-        android:text="Your Shopping List" />
+
 
 
 </FrameLayout>
