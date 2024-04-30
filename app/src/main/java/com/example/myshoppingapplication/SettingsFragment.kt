@@ -7,11 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import com.example.myshoppingapplication.databinding.FragmentSettingsBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
+
+//initialize view binding in a fragment
+private var _binding: FragmentSettingsBinding? = null
+private val binding get() = _binding!!
 
 /**
  * A simple [Fragment] subclass.
@@ -31,39 +36,42 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         val view =  inflater.inflate(R.layout.fragment_settings, container, false)
 
-        val profile_settings = view.findViewById<CardView>(R.id.cvProfileSettings)
+        val profileSettings = view.findViewById<CardView>(R.id.cvProfileSettings)
         val notification = view.findViewById<CardView>(R.id.cvNotifications)
         val appearance = view.findViewById<CardView>(R.id.cvAppearance)
         val security = view.findViewById<CardView>(R.id.cvPrivacySecurity)
         val help = view.findViewById<CardView>(R.id.cvHelp)
         val about = view.findViewById<CardView>(R.id.cvAbout)
 
-        profile_settings.setOnClickListener {
+        //Profile Settings functionality
+        profileSettings.setOnClickListener {
             Toast.makeText(context,"Profile Settings",Toast.LENGTH_LONG).show()
         }
 
+        //Notifications Settings functionality
         notification.setOnClickListener {
             Toast.makeText(context,"Notifications",Toast.LENGTH_LONG).show()
         }
 
+        //Appearance Settings functionality
         appearance.setOnClickListener {
             Toast.makeText(context,"Appearance Clicked",Toast.LENGTH_LONG).show()
         }
+
+        //Security Settings functionality
         security.setOnClickListener {
             Toast.makeText(context,"Security Clicked!",Toast.LENGTH_LONG).show()
         }
-
+        //Help Settings functionality
         help.setOnClickListener {
             Toast.makeText(context,"Help clicked",Toast.LENGTH_LONG).show()
         }
 
+        //About Settings functionality
         about.setOnClickListener {
             Toast.makeText(context,"About Clicked!",Toast.LENGTH_LONG).show()
         }
