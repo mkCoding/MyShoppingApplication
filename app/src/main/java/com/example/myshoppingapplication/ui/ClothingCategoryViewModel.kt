@@ -9,6 +9,7 @@ import androidx.lifecycle.ViewModel
 //the view model holds live data that will be observed in my fragment (ClothingCategoryFragment)
 class ClothingCategoryViewModel : ViewModel(){
 
+    //Origin list
     private val _dataList = MutableLiveData<List<String>>()
     val dataList: LiveData<List<String>> = _dataList
 
@@ -17,15 +18,17 @@ class ClothingCategoryViewModel : ViewModel(){
     val filteredDataList: LiveData<List<String>> = _filteredDataList //create filtered list that will hold filtered data as user adds input
 
     init {
-        // Simulate data loading
-        loadDummyData()
+        // Load clothing data
+        loadClothingData()
     }
 
-    private fun loadDummyData() {
-        val dummyData = listOf( "Blue Striped Button-Up Shirt", "White Graphic T-shirt", "Black V-neck Sweater", "Pink Crop Top",
+    private fun loadClothingData() {
+        //populate the original list
+        val clothingData = listOf( "Blue Striped Button-Up Shirt", "White Graphic T-shirt", "Black V-neck Sweater", "Pink Crop Top",
             "Black Leggings","Polka Dot Wrap Dress", "Leather Jacket","Yoga Pants",
-            "Floral Maxi Dress", "Trench Coat", "Bikini", "One-Piece Swimsuit", "Swim Cover-Up") // Your data list
-        _dataList.value = dummyData
+            "Floral Maxi Dress", "Trench Coat", "Bikini", "One-Piece Swimsuit", "Swim Cover-Up")
+
+        _dataList.value = clothingData  //this will populate the dataList which I will be able to reference from fragment
 
     }
 

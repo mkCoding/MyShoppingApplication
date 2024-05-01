@@ -43,17 +43,23 @@ class ClothingCategoryFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        //create a reference to the ClothingCategoryViewModel
         viewModel = ViewModelProvider(this)[ClothingCategoryViewModel::class.java]
 
         //initialize the array adapter
         adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1)
 
-        //link the list view with the adapter so it understands the list that we are tying to the code
+        //link the list view with the adapter so that it will be properly populated
         binding.lvClothingProducts.adapter = adapter
 
-        //this will observe the origin list pulled from ClothingCategoryViewModel
+        /*
+        this will Observe the origin list pulled from ClothingCategoryViewModel
+        - viewModel.dataList -> refers to LiveData within ViewModel. This LiveData is a data holder that can be observed within an activity/fragment.
+        - observe(viewLifecycleOwner) -> method used to observe changes in LiveData
+        - data -> the new value emitted by live data when it changes
+         */
         viewModel.dataList.observe(viewLifecycleOwner) { data ->
-            adapter.clear()
+            adapter.clear() //clears existing items in adapter
             adapter.addAll(data) //add data from origin list to adapter (this is obtained from view model)
 
         }
@@ -74,7 +80,7 @@ class ClothingCategoryFragment : Fragment() {
             //when the text is changed update/filter the list
             override fun onQueryTextChange(newText: String?): Boolean {
 //                adapter.filter.filter(newText.orEmpty())
-                viewModel.filterData(newText) //when this method is hit use viewModel to filter data
+                viewModel.filterData(newText) //when this method is hit, use viewModel to filter data
                 return true
             }
         })
