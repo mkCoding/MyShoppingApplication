@@ -33,7 +33,7 @@ class ClothingCategoryFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        //initialize bindinv variable so that layoutview references are easier to access
+        //initialize binding variable so that layout view references are easier to access
         binding = FragmentClothingCategoryBinding.inflate(inflater, container, false)
 
         // Inflate the layout for this fragment
