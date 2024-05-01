@@ -3,14 +3,127 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ClothingCategoryFragment">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+<!--    <TextView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:gravity="center"-->
+<!--        android:textSize="25sp"-->
+<!--        android:text="Clothing Category Fragment"/>-->
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <SearchView
+        android:id="@+id/svSearchAllProducts"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:text="Clothing Category Fragment"/>
+        android:layout_height="wrap_content"
+        android:iconifiedByDefault="false"
+        android:queryHint="Search for a product..." />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Filters"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:layout_marginTop="15dp"
+        android:textSize="20sp"
+        android:id="@+id/tvFilter"
+      />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+
+        android:background="@color/royal_blue"
+        android:layout_below="@id/textView" />
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:layout_marginStart="10dp"
+                android:id="@+id/btnMenClothing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textStyle="italic"
+                android:text="Men's Clothing"/>
+
+            <Button
+                android:id="@+id/btnWomenClothing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="italic"
+                android:text="Women's Clothing"
+                android:layout_marginEnd="10dp"/>
+
+
+            <Button
+                android:id="@+id/btnTops"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textStyle="italic"
+                android:text="Tops"/>
+
+            <Button
+
+                android:id="@+id/btnBottoms"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textStyle="italic"
+                android:text="Bottoms"/>
+
+
+            <Button
+
+                android:id="@+id/btnActivewear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textStyle="italic"
+                android:text="Active Wear"/>
+            <Button
+                android:id="@+id/btnSwimwear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:textStyle="italic"
+                android:text="Swimwear"/>
+
+        </LinearLayout>
+
+
+
+
+    </HorizontalScrollView>
+
+<ListView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/lvClothingProducts"
+    android:layout_weight="1"
+
+
+    />
+
+
+
+
+</LinearLayout>
 
 </FrameLayout>
