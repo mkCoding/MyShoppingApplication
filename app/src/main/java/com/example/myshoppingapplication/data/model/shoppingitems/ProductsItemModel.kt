@@ -3,7 +3,7 @@ package com.example.myshoppingapplication.data.model.shoppingitems
 
 import com.google.gson.annotations.SerializedName
 
-data class ShoppingItemsModel(
+data class ProductsItemModel(
     @SerializedName("category")
     val category: String? = "",
     @SerializedName("description")

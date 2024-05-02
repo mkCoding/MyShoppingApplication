@@ -21,10 +21,10 @@ class FootwearCategoryViewModel:ViewModel(){
     private fun getProductDetails() {
 
         viewModelScope.launch {
-            val result = RetrofitInstance.apiClient2.getShoppingItems()
+            val result = RetrofitInstance.apiClient2.getProductItems()
 
-            if(!result.description.isNullOrEmpty()){
-                _text.postValue(result.description)
+            if(!result.isNullOrEmpty()){
+                _text.postValue(result[0].description)
             }
 
         }
