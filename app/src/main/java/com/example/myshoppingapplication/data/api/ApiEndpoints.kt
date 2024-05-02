@@ -6,7 +6,7 @@ import retrofit2.http.GET
 
 interface ApiEndpoints{
     @GET(ApiDetail.DOG_FACT_ENDPOINT)
-
     suspend fun getDogFact():DogFactModel
+    @GET(ApiDetail.SHOP_ITEMS_ENDPOINT)
     suspend fun getShoppingItems():ShoppingItemsModel
 }

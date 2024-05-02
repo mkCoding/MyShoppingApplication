@@ -1,4 +1,4 @@
-package com.example.myshoppingapplication.ui
+package com.example.myshoppingapplication.ui.clothing_category
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

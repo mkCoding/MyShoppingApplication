@@ -23,8 +23,14 @@ object RetrofitInstance {
         .client(okHttpClient)
         .addConverterFactory(converter).build()
 
+    private val retrofit2 = Retrofit.Builder()
+        .baseUrl(ApiDetail.BASE_URL_SHOPPING)
+        .client(okHttpClient)
+        .addConverterFactory(converter).build()
+
     //Create reference to our local API endpoints
     val apiClient = retrofit.create(ApiEndpoints::class.java)
+    val apiClient2 = retrofit2.create(ApiEndpoints::class.java)
 
 
 

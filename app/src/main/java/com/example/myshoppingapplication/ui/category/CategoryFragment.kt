@@ -26,6 +26,11 @@ class CategoryFragment : Fragment() {
             //move to next screen
             findNavController().navigate(R.id.action_nav_category_to_clothingCategoryFragment)
         }
+
+        val footwearCategoryCardView:CardView = binding.cvFootwear
+        footwearCategoryCardView.setOnClickListener {
+            findNavController().navigate(R.id.action_nav_category_to_footwearCategoryFragment) //navigate to footwear category fragment
+        }
         // Inflate the layout for this fragment
         return root
     }

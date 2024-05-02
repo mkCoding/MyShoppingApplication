@@ -30,6 +30,9 @@
         <action
             android:id="@+id/action_nav_category_to_clothingCategoryFragment"
             app:destination="@id/clothingCategoryFragment" />
+        <action
+            android:id="@+id/action_nav_category_to_footwearCategoryFragment"
+            app:destination="@id/footwearCategoryFragment" />
     </fragment>
     <fragment
         android:id="@+id/nav_shoppingList"
@@ -58,7 +61,12 @@
         tools:layout="@layout/fragment_settings" />
     <fragment
         android:id="@+id/clothingCategoryFragment"
-        android:name="com.example.myshoppingapplication.ClothingCategoryFragment"
+        android:name="com.example.myshoppingapplication.ui.clothing_category.ClothingCategoryFragment"
         android:label="All Clothing"
         tools:layout="@layout/fragment_clothing_category" />
+    <fragment
+        android:id="@+id/footwearCategoryFragment"
+        android:name="com.example.myshoppingapplication.ui.footwear_category.FootwearCategoryFragment"
+        android:label="fragment_footwear_category"
+        tools:layout="@layout/fragment_footwear_category" />
 </navigation>

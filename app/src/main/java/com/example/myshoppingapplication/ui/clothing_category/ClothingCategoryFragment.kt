@@ -1,4 +1,4 @@
-package com.example.myshoppingapplication
+package com.example.myshoppingapplication.ui.clothing_category
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,13 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.ListView
 import android.widget.SearchView
-import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
-import com.example.myshoppingapplication.databinding.FragmentCategoryBinding
 import com.example.myshoppingapplication.databinding.FragmentClothingCategoryBinding
-import com.example.myshoppingapplication.ui.ClothingCategoryViewModel
 
 
 /**
@@ -24,7 +20,7 @@ class ClothingCategoryFragment : Fragment() {
 
     private lateinit var binding: FragmentClothingCategoryBinding
     private lateinit var adapter:ArrayAdapter<String>
-    lateinit var viewModel:ClothingCategoryViewModel
+    lateinit var viewModel: ClothingCategoryViewModel
 
 //    private val dataList = listOf(
 //        "Blue Striped Button-Up Shirt", "White Graphic T-shirt", "Black V-neck Sweater", "Pink Crop Top",
